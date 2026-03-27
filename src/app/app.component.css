@@ -1,0 +1,30 @@
+main {
+  min-height: calc(100vh - 126px);
+}
+
+footer {
+  position: relative;
+  display: block;
+  color: black;
+  background-color: #dcdcdc;
+  height: 50px;
+  font-weight: bold;
+}
+
+ul > li {
+  display: inline !important;
+  margin-left: 10px;
+}
+
+ul > li a {
+   text-decoration: none;
+   font-size: 10pt;
+}
+
+ul > li a:hover {
+  color: #fff !important;
+}
+
+
+
+
