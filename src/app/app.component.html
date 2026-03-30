@@ -5,7 +5,6 @@
         <div class="row col-12">
           <div class="col-10 col-md-11 col-lg-11 col-xl-11 d-flex align-items-center">
             <a class="navbar-brand" href="#">
-              <!--img src="../assets/rt_logo.jpg" alt="redetec" style="border-radius: 100%;"-->
               <h1 class="h3"><span style="color: #06f3af;">.start()</span></h1>
             </a>
             <div class="mt-3 menu-barra">
@@ -14,7 +13,7 @@
                     <a routerLink="/home" class="nav-link active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a routerLink="/home-empresa" class="nav-link active">Empresas</a>
+                    <a routerLink="#" class="nav-link active" data-toggle="modal" data-target="#staticBackdrop">Empresas</a>
                 </li>
                 <li class="nav-item">
                   <a  routerLink="/produto" class="nav-link active">Produtos</a>
@@ -27,7 +26,7 @@
           </div>
           <div class="col-2 col-md-1 col-lg-1 col-xl-1 d-flex align-items-center justify-content-end">
             <button type="button" class="navbar-toggler d-lg-none d-xl-none d-md-none" (click)="abrirMenu()">
-              <img src="../assets/hamburger.gif" alt="Menu">
+              <img src="hamburger.gif" alt="Menu">
             </button>
           </div>
         </div>
@@ -49,8 +48,90 @@
         <router-outlet></router-outlet>
       </main>
     </div>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Cadastre Sua Empresa!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" novalidate [formGroup]="empresaForm">
+              <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                  <label for="dataCadastro">Data de Cadastro</label>
+                  <input type="date" class="form-control" id="dataCadastro" formControlName="dataCadastro">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                  <label for="cep">CEP</label>
+                  <input type="text" class="form-control" id="cep" formControlName="cep" (blur)="buscarCep()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nomeFantasia">Nome da Empresa</label>
+                <input type="text" class="form-control" id="nomeFantasia" placeholder="Nome da sua Empresa Aqui!" formControlName="nomeFantasia">
+              </div>
+              <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" class="form-control" id="endereco" placeholder="Endereço da Empresa!" formControlName="endereco">
+              </div>
+              <div class="form-group">
+                <label for="complemento">Complemento</label>
+                <input type="text" class="form-control" id="complemento" formControlName="complemento">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" class="form-control" id="bairro" formControlName="bairro">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                  <label for="municipio">Município</label>
+                  <input type="text" class="form-control" id="municipio" formControlName="municipio">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-12 col-md-6">
+                  <label for="telefone">Fone Fixo</label>
+                  <input type="text" class="form-control" id="telefone" formControlName="telefone">
+                </div>
+                <div class="form-group col-12 col-md-6">
+                  <label for="whatsapp">Whatsapp</label>
+                  <input type="text" class="form-control" id="whatsapp" formControlName="whatsapp">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="tipoPostagem">Escolha o Ramo de Atividade</label>
+                <select class="form-control" id="tipoPostagem" formControlName="tipoPostagem">
+                  <option value="" selected>Escolha...</option>
+                  @for (ramo of ramoAtividades; track ramoAtividades) {
+                    <option [value]="ramo">{{ ramo }}</option>
+                  }
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="breveDescricao">Breve Descrição da Empresa</label>
+                <input type="text" class="form-control" id="breveDescricao" formControlName="breveDescricao">
+              </div>
+              <div class="form-group">
+                <label for="localizacao">Inserir Link de Localização</label>
+                <input type="text" class="form-control" id="localizacao" placeholder="Insira a Localização da Empresa" formControlName="localizacao">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="d-flex justify-content-center align-items-center " >
       Desenvolvido por:
       <span style="color: red;">KEN</span>TEC - Soluções em Informática.
     </footer>
+</div>
+<div>
+
 </div>
