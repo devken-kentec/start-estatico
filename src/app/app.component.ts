@@ -39,7 +39,7 @@ export class AppComponent {
         "nomeFantasia":[],
         "cep":[],
         "endereco":[],
-        "complementto":[],
+        "complemento":[],
         "bairro":[],
         "municipio":[],
         "telefone":[],
@@ -67,11 +67,18 @@ export class AppComponent {
   public buscarCep(): void {
     let cep = this.empresaForm.get("cep")?.value;
     this.empresaService.buscarCep(cep).pipe(take(1)).subscribe((res: Cep)=>{
-        console.log(res);
         this.empresaForm.get("cep")?.setValue(res.cep);
         this.empresaForm.get("endereco")?.setValue(res.logradouro);
         this.empresaForm.get("bairro")?.setValue(res.bairro);
         this.empresaForm.get("municipio")?.setValue(res.localidade);
     });
+  }
+
+  public salvarEmpresa(): void {
+    let form = this.empresaForm;
+    if(form.valid){
+
+    }
+    form.reset();
   }
 }
