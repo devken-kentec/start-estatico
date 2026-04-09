@@ -76,8 +76,18 @@ export class AppComponent {
 
   public salvarEmpresa(): void {
     let form = this.empresaForm;
+    console.log(form.value);
     if(form.valid){
-
+     this.empresaService.Salvar(form.value).pipe(take(1)).subscribe({
+           next: (res) => {
+          console.log(res);
+          //this.sharedService.saveShow("Seus dados foram alterados!", "Sucesso!!");
+        },
+        error: (err) => {
+          console.log(err);
+          //this.sharedService.warningShow("Ops! Algo Errado!!", "Verifique o Console!");
+        },
+      });
     }
     form.reset();
   }
