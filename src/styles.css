@@ -9,6 +9,52 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
+@media (min-width: 280px) and (max-width: 410px)  {
+  .guia {
+    font-size: 10pt !important;
+  }
+
+  .icone {
+    font-size: 10pt !important;
+  }
+
+  .frase {
+    font-size: 6pt !important;
+  }
+}
+
+@media (min-width: 411px) and (max-width: 575px) and (orientation: portrait) {
+  img.logo {
+    width: 45vw !important;
+  }
+}
+
+@media (min-width: 576px) {
+  img.logo {
+    width: 50vw !important;
+  }
+}
+
+@media (min-width: 768px) {
+  img.logo {
+    width: 35vw !important;
+  }
+}
+
+@media (min-width: 992px) {
+  img.logo {
+    width: 20vw !important;
+    margin-left: 10px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  img.logo {
+    width: 13vw !important;
+    margin-left: 10px !important;
+  }
+}
+
 .pointer {
   cursor: pointer;
 }

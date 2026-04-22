@@ -25,6 +25,30 @@ ul > li a:hover {
   color: #fff !important;
 }
 
+.borders-input {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
 
+.borders-adendo {
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+
+.logo-area h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1e6f5c, #289672);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: yellow;
+}
+
+.logo-area p {
+    font-size: 0.8rem;
+    color: #000;
+    letter-spacing: -0.2px;
+}
 
 
