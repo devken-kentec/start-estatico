@@ -35,6 +35,6 @@ export class EmpresaListComponent {
   }
 
     public editar(id: number): void{
-    this.router.navigate(["editar", id], { relativeTo: this.route });
+      this.router.navigate(["editar", id], { relativeTo: this.route });
   }
 }
